@@ -28,11 +28,16 @@
       'pk.eyJ1Ijoid2luc3R3MiIsImEiOiJjbWt5cm11djkwYW5xM2Zvam40MW05aG96In0.XgSPU6D4f-QStbCZyqGJCw';
 
     const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/light-v10',
-      zoom: 3,
-      center: [-100, 40]
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v11', // light works better for choropleths
+        center: [-96, 37.8],
+        zoom: 3.6,
+        minZoom: 3,
+        projection: {
+            name: 'albers'
+        }
     });
+
 
     // Choropleth breaks (rate per 1,000 people)
     const breaks = [0, 20, 40, 60, 80, 100, 150, 200, 250];
